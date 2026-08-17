@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://masriamix.com/sitemap.xml

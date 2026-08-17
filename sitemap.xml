@@ -1,0 +1,82 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://masriamix.com/</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/about.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/bordt.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/coloredconcrete.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/contact.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/fiber.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/japan.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/lightconc.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/m500.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/magdi.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/mbrg.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/msf.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/muz.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/perm.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/projects.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/self.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/services.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/stamped.html</loc>
+  </url>
+
+  <url>
+    <loc>https://masriamix.com/water.html</loc>
+  </url>
+
+</urlset>
+```

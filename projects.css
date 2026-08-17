@@ -1,0 +1,742 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family:system-ui,sans-serif;
+}
+html{
+  font-size: 20px;
+}
+body{
+    background:linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)),url("image/el_masria_for_engineering_concrete_cover.jpg");
+    background-position: center;
+    text-transform: uppercase;
+}
+.anm1{
+      object-fit: cover;
+      height: 150px;
+    }
+ .navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 25px;
+    background:whitesmoke;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    direction: ltr;
+    margin: 0;
+    height: 20vh;
+}
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:20px;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    font-weight:bold;
+    color: #000000;
+    transition:.3s;
+    margin: 0;
+    padding: 10px 10px;
+    border-radius: 20px;
+}
+.active{
+  background:#b0e8f2;
+  display: flex;
+
+}
+.nav-links a:hover{
+    background: #000000;
+    color:rgb(255, 255, 255);
+  display: flex;
+
+}
+.lan {
+  position: relative;
+  padding: 12px 35px;
+  background:#b0e8f2;
+  font-size: 17px;
+  font-weight: 500;
+  color: #000000;
+  border: 0;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.lan:hover {
+  background: white;
+  color: #000000;
+  box-shadow: 0 0 25px #0000008c;
+}
+.ln{
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.menu-btn{
+    display:none;
+    font-size:50px;
+    cursor:pointer;
+}
+footer{
+padding:10px;
+font-size: 14px;
+background:#1f252ba4;
+color:white;
+text-align:center;
+bottom: 0;
+width: 100%;
+}
+/**********************************/
+.flip-card1 {
+  width: 70%;
+  height: 800px;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  direction: ltr;
+  display: flex;
+  background: url(projects/المتحف\ المصري.jpg);
+  background-position: center;
+  background-size:cover;
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: start;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+
+}
+.flip-card2 {
+  width: 70%;
+  height: 800px;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  direction: ltr;
+  display: flex;
+  background: url(projects/مركز\ مجدي\ يعقوب\ للقلب.jpg);
+  background-position: center;
+  background-size:cover;
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: start;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+}
+.flip-card3 {
+  width: 70%;
+  height: 800px;
+  perspective: 1000px;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  direction: ltr;
+  display: flex;
+  background: url(projects/مطار\ سفينكس.jpg);
+  background-position: center;
+  background-size:cover;
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  justify-content: end;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+}
+.flip-card4 {
+  width: 70%;
+  height: 800px;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  direction: ltr;
+  display: flex;
+  background: url(projects/مستشفى\ 500\ 500.jpg);
+  background-position: center;
+  background-size:cover;
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: start;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+}
+.flip-card5 {
+  width: 70%;
+  height: 800px;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  direction: ltr;
+  display: flex;
+  background: url(projects/مطار\ برج\ العرب.jpg);
+  background-position: center;
+  background-size:cover;
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  justify-content:start;
+  align-items: start;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+}
+.flip-card6 {
+  width: 70%;
+  height: 800px;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  direction: ltr;
+  display: flex;
+  background: url(projects/الجامعه\ اليابانيه\ برج\ العرب.jpg);
+  background-position: center;
+  background-size:cover;
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: start;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+}
+.flip-card7 {
+  width: 70%;
+  height: 800px;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  direction: ltr;
+  display: flex;
+  background: url(projects/القطار-الكهربائى-السريع.jpg);
+  background-position: center;
+  background-size:cover;
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: start;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+}
+.flip-card8 {
+  width: 70%;
+  height: 800px;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  direction: ltr;
+  display: flex;
+  background: url(projects/محطة\ تحليه\ مياه\ حدائق\ اكتوبر.jpg);
+  background-position: center;
+  background-size:cover;
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: start;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+}
+/**********/
+.all{
+   display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;   
+    justify-content: center;
+    font-weight: bold;
+    padding-bottom: 5%;
+}
+.card1 {
+  flex: 1 1 300px; 
+  flex-direction: column;
+  max-width: 300px;
+  height: 200px;
+  background: url("projects/Badya.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card2 {
+   flex: 1 1 300px; 
+  flex-direction: column;
+  max-width: 300px;
+  height: 200px;
+  background:url("projects/px.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card3 {
+  text-align: center;
+  flex-direction: column;
+   flex: 1 1 300px; 
+  max-width: 300px;
+  height: 200px;
+  background:url("projects/Water\ Treatment\ New\ October.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card4 {
+   flex: 1 1 300px; 
+  flex-direction: column;
+  max-width: 300px;
+  height: 200px;
+  background: url("projects/Garden\ Lakes.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card5 {
+  flex-direction: column;
+   flex: 1 1 300px; 
+  max-width: 300px;
+  height: 200px;
+  background:url("projects/I-City\ October.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card6 {
+  flex-direction: column;
+   flex: 1 1 300px; 
+  max-width: 300px;
+  height: 200px;
+  background:url("projects/VYE.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card7 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  background: url("projects/Belle\ Vie.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card8 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  height: 200px;
+  flex-direction: column;
+  background: url("projects/Zaied\ Estates.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card9 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  height: 200px;
+  flex-direction: column;
+  background: url("projects/Naia\ West.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card10 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/Keeva.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card11 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/Ashgar\ City.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card12 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/Eden\ Healthcare\ Hospital.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card13 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/Mid\ Town\ Mall.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card14 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/Sun\ Plaza\ Mall.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card15 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/Royal\ Plaza\ Mall.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card16 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/Swan\ Lake\ West.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card17 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/Green\ 6.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card18 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/O\ West.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card19 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/Toshiba\ Factory.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card20 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/Belle\ Vie\ Sports\ Club.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card21 {
+   flex: 1 1 300px; 
+  max-width: 300px;
+  flex-direction: column;
+  height: 200px;
+  text-align: center;
+  background: url("projects/Belle\ Vie\ Street\ of\ Dreams.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.card22 { 
+ width: 70%;
+  height: 800px;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  direction: ltr;
+  display: flex;
+  background: url(projects/WhatsApp\ Image\ 2026-07-05\ at\ 7.01.43\ PM.jpeg);
+  background-position: center;
+  background-size:cover;
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+}
+/****************************************************************/
+.working{
+  display: flex;
+  color:#166886;
+  font-size: 18px;
+  margin: 0;
+  gap: 50px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 1%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  text-transform: none;
+}
+.working ul{
+  width: 20%;
+}
+.imp{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 2%;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.imp a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+   text-decoration: none;
+}
+.title {
+  font-size: 2em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  color: #000;
+  text-shadow:0 8px 20px #000000;
+
+}
+.title3 {
+    display: flex;
+  font-size: 2em;
+  font-weight: 900;
+  margin: 0;
+  margin-bottom: 150px;
+  text-align: end;
+  justify-content: end;
+  padding: 5%;
+  color: #000000;
+  text-shadow:0 8px 20px #000000;
+}
+.title5 {
+    display: flex;
+  font-size: 2em;
+  font-weight: 900;
+  margin: 0;
+  margin-bottom: 150px;
+  text-align: end;
+  justify-content: start;
+  padding: 6%;
+  color: #000000;
+  text-shadow:0 8px 20px #000000;
+}
+/****************/
+@media(max-width:630px) {
+  .anm1{
+      object-fit: cover;
+      height: 100px;
+    }
+  
+}
+@media(max-width:370px) {
+  .anm1{
+      object-fit: cover;
+      height: 80px;
+    }
+  
+}
+/****************/
+@media(max-width:1255px){
+  .working{
+  font-size: 10px;
+  margin: 0;
+  padding: 5%;
+  gap: 20px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+}
+/* Mobile */
+@media(max-width:768px){
+  .working{
+  font-size: 5px;
+  margin: 0;
+  gap: 20px;
+  display: flex;
+}
+  .enn{
+  font-size: 15px;
+  }
+  .flip-card1 ,.flip-card2,.flip-card3,.flip-card4,.flip-card5,.flip-card6,.flip-card7,.flip-card8 , .card22{
+    display: flex;
+    height: 400px;
+   font-size: 15px;
+   width: 80%;
+  }
+}
+@media(max-width:1255px){
+  footer{
+position:relative;
+}
+}
+@media (max-width:1024px){
+   .menu-btn{
+       z-index: 100;
+        display:block;
+    }
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        position: absolute;
+        height: 100%;
+        top:0px;
+        right:0px;
+        padding-top: 200px;
+        background:white;
+        width:220px;
+        border-radius:10px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+       z-index: 99;
+    }
+    .nav-links.active{
+        display:flex;
+    } 
+}
+@media(max-width:768px){
+    footer{
+font-size: 10px;
+}
+}

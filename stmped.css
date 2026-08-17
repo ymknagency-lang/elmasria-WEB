@@ -1,0 +1,247 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family:system-ui,sans-serif;
+}
+html{
+  font-size: 20px;
+}
+body{
+    background:linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.2)),url("image/el_masria_for_engineering_concrete_cover.jpg");
+    background-position: center;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100vh
+    ;
+}
+.logo{
+    direction: ltr;
+}
+.coin {
+  
+  display: flex;
+  font-size: 150px;
+  width: 0.1em;
+  height: 1em;
+  background: linear-gradient(#ffffff, #141001);
+  left: 100px;
+  top: 20px;
+  position: absolute;
+  animation: rotate_4001510 7s infinite linear;
+  transform-style: preserve-3d;
+}
+
+.coin .side, .coin:before, .coin:after {
+  background: url("image/المصريه\ logo.jpg");
+  background-position: center;
+  background-size: cover;
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  border-radius: 50%;
+  right: -0.4em;
+  text-align: center;
+  line-height: 1;
+  transform: rotateY(-90deg);
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.coin .tails, .coin:after {
+  background: url("image/المصريه\ logo.jpg");
+  background-position: center;
+  background-size: cover;
+  left: -0.4em;
+  transform: rotateY(90deg);
+}
+.coin:before, .coin:after {
+  background: linear-gradient(#ffffff, #141001);
+  backface-visibility: hidden;
+  transform: rotateY(90deg);
+}
+.coin:after {
+  transform: rotateY(-90deg);
+}
+@keyframes rotate_4001510 {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:whitesmoke;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    direction: ltr;
+    margin: 0;
+    height: 20vh;
+}
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:20px;
+    padding-right: 20px;
+    align-items: center;
+}
+.nav-links a{
+    text-decoration:none;
+    font-weight:bold;
+    color: #000000;
+    transition:.3s;
+    margin: 0;
+    padding: 10px 10px;
+    border-radius: 20px;
+}
+.active{
+  background:#b0e8f2;
+  display: flex;
+
+}
+.nav-links a:hover{
+    background: #000000;
+    color:rgb(255, 255, 255);
+  display: flex;
+}
+
+.menu-btn{
+    display:none;
+    font-size:50px;
+    cursor:pointer;
+}
+footer{
+padding:10px;
+font-size: 14px;
+background:#1f252ba4;
+color:white;
+text-align:center;
+bottom: 0;
+width: 100%;
+}
+.lan {
+  position: relative;
+  padding: 12px 35px;
+  background:#b0e8f2;
+  font-size: 17px;
+  font-weight: 500;
+  color: #000000;
+  border: 0;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.lan:hover {
+  background: transparent;
+  color: #424242;
+  box-shadow: 0 0 25px #0000008c;
+}
+.ln{
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+/***********/
+.img{
+  height: 300px; border-radius: 20px; margin: 5%;
+}
+.text{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+}
+h2{
+    width:80%;
+    margin-top:10%;
+    text-align:center;
+    line-height:1.5;
+}
+/* Tablet */
+@media (max-width:992px){
+    h2{
+        width:95%;
+        margin-top:8%;
+        font-size:1rem;
+    }
+}
+/* Mobile */
+@media (max-width:768px){
+    h2{
+        width:95%;
+        margin-top:6%;
+    }
+    .img{
+      height: 250px;
+    }
+}
+/* Small Mobile */
+@media (max-width:480px){
+    h2{
+        width:95%;
+        margin-top:5%;
+        line-height:1.4;
+    }
+    .img{
+      height: 200px;
+    }
+}
+@media (max-width:320px){
+    h2{
+        width:90%;
+        margin-top:5%;
+        font-size:.8rem;
+        line-height:1.4;
+    }
+    .img{
+      height: 180px;
+    }
+}
+/************/
+@media(max-width:1255px){
+  footer{
+position:relative;
+}
+}
+@media (max-width:1024px){
+  .coin{
+    font-size: 130px;
+  }
+   .menu-btn{
+       z-index: 100;
+        display:block;
+    }
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        position: absolute;
+        height: 100%;
+        top:0px;
+        right:0px;
+        padding-top: 200px;
+        background:white;
+        width:220px;
+        border-radius:10px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+       z-index: 99;
+    }
+    .nav-links.active{
+        display:flex;
+    } 
+}
+@media(max-width:768px){
+    footer{
+font-size: 10px;
+}
+  .coin{
+    left: 55px;
+    font-size: 110px;
+  } 
+}
