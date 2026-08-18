@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://masriamix.com/sitemap.xml
+Sitemap: https://elmasriaconcrete.com/sitemap.xml
