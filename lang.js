@@ -491,3 +491,25 @@ function toggleMenu(force) {
   const idle = window.requestIdleCallback || (f => setTimeout(f, 1500));
   addEventListener("load", () => idle(() => document.querySelectorAll(".nav-links a[href]").forEach(prefetch)));
 })();
+
+
+/* ---------- Image preloading: after the page is idle, fetch every site image once so other pages show them instantly ---------- */
+(() => {
+  const c = navigator.connection;
+  if (c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || ""))) return;
+  const urls = [...new Set([
+    "https://ik.imagekit.io/ymkn/elmasria/WhatsApp%20Image%202026-07-01%20PM.jpeg", /* home hero */
+    ...Object.values(IMG)
+  ])].filter(u => /^https?:\/\//.test(u));
+  const warm = () => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+        .then(() => navigator.serviceWorker.ready)
+        .then(r => r.active && r.active.postMessage({ preload: urls }))
+        .catch(() => fallback());
+    } else fallback();
+  };
+  const fallback = () => urls.forEach(u => { const i = new Image(); i.decoding = "async"; i.src = u; });
+  const idle = window.requestIdleCallback || (f => setTimeout(f, 1200));
+  addEventListener("load", () => idle(warm));
+})();
