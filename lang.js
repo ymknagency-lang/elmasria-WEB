@@ -1,5 +1,66 @@
+/* ===== IMAGES — the one place to change image sources =====
+   Use a local path or a direct https:// URL. Leave "" to show a neutral placeholder.
+   (The home-page hero image is the only exception: its src is in index.html so it loads first.) */
+const IMG = {
+  logo: "https://ik.imagekit.io/ymkn/elmasria/%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A%D9%87%20logo.jpg",
+  cover: "https://ik.imagekit.io/ymkn/elmasria/el_masria_for_engineering_concrete_cover.jpg",
+  band24: "https://ik.imagekit.io/ymkn/elmasria/WhatsApp%20Image%202026-07-03.jpeg",
+  bandServices: "https://ik.imagekit.io/ymkn/elmasria/WhatsApp%20Image%202026-07-01%20at%207.59.54%20PM.jpeg",
+  sv1: "https://ik.imagekit.io/ymkn/elmasria/coloerd%20concrete.jpg",
+  sv2: "https://ik.imagekit.io/ymkn/elmasria/fiber%20concrete.jpg",
+  sv3: "https://ik.imagekit.io/ymkn/elmasria/light%20weight%20concrete.jpg",
+  sv4: "https://ik.imagekit.io/ymkn/elmasria/porous%20concrete.jpg",
+  sv5: "https://ik.imagekit.io/ymkn/elmasria/self%20compact%20concrete.jpg",
+  sv6: "https://ik.imagekit.io/ymkn/elmasria/stamped%20concrete.jpg",
+  muz: "https://ik.imagekit.io/ymkn/elmasria/%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D9%81%20%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A.jpg",
+  magdi: "https://ik.imagekit.io/ymkn/elmasria/%D9%85%D8%B1%D9%83%D8%B2%20%D9%85%D8%AC%D8%AF%D9%8A%20%D9%8A%D8%B9%D9%82%D9%88%D8%A8%20%D9%84%D9%84%D9%82%D9%84%D8%A8.jpg",
+  msf: "https://ik.imagekit.io/ymkn/elmasria/%D9%85%D8%B7%D8%A7%D8%B1%20%D8%B3%D9%81%D9%8A%D9%86%D9%83%D8%B3.jpg",
+  m500: "https://ik.imagekit.io/ymkn/elmasria/%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89%20500%20500.jpg",
+  mbrg: "https://ik.imagekit.io/ymkn/elmasria/%D9%85%D8%B7%D8%A7%D8%B1%20%D8%A8%D8%B1%D8%AC%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8.jpg",
+  japan: "https://ik.imagekit.io/ymkn/elmasria/%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9%D9%87%20%D8%A7%D9%84%D9%8A%D8%A7%D8%A8%D8%A7%D9%86%D9%8A%D9%87%20%D8%A8%D8%B1%D8%AC%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8.jpg",
+  borgt: "https://ik.imagekit.io/ymkn/elmasria/%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A6%D9%89-%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%B9.jpg",
+  water: "https://ik.imagekit.io/ymkn/elmasria/%D9%85%D8%AD%D8%B7%D8%A9%20%D8%AA%D8%AD%D9%84%D9%8A%D9%87%20%D9%85%D9%8A%D8%A7%D9%87%20%D8%AD%D8%AF%D8%A7%D8%A6%D9%82%20%D8%A7%D9%83%D8%AA%D9%88%D8%A8%D8%B1.jpg",
+  waterway: "https://ik.imagekit.io/ymkn/elmasria/WhatsApp%20Image%202026-07-05%20at%207.01.43%20PM.jpeg",
+  badya: "https://ik.imagekit.io/ymkn/elmasria/Badya.jpeg",
+  px: "https://ik.imagekit.io/ymkn/elmasria/px.png",
+  wtp: "https://ik.imagekit.io/ymkn/elmasria/Water%20Treatment%20New%20October.jpg",
+  gardenlakes: "https://ik.imagekit.io/ymkn/elmasria/Garden%20Lakes.webp",
+  icity: "https://ik.imagekit.io/ymkn/elmasria/I-City%20October.webp",
+  vye: "https://ik.imagekit.io/ymkn/elmasria/VYE.jpeg",
+  bellevie: "https://ik.imagekit.io/ymkn/elmasria/Belle%20Vie.jpg",
+  zayed: "https://ik.imagekit.io/ymkn/elmasria/Zaied%20Estates.webp",
+  naia: "https://ik.imagekit.io/ymkn/elmasria/Naia%20West.png",
+  keeva: "https://ik.imagekit.io/ymkn/elmasria/Keeva.jpg",
+  ashgar: "https://ik.imagekit.io/ymkn/elmasria/Ashgar%20City.webp",
+  eden: "https://ik.imagekit.io/ymkn/elmasria/Eden%20Healthcare%20Hospital.jpg",
+  midtown: "https://ik.imagekit.io/ymkn/elmasria/Mid%20Town%20Mall.jpeg",
+  sunplaza: "https://ik.imagekit.io/ymkn/elmasria/Sun%20Plaza%20Mall.webp",
+  royalplaza: "https://ik.imagekit.io/ymkn/elmasria/Royal%20Plaza%20Mall.jpg",
+  swanlake: "https://ik.imagekit.io/ymkn/elmasria/Swan%20Lake%20West.jpg",
+  green6: "https://ik.imagekit.io/ymkn/elmasria/Green%206.jpg",
+  owest: "https://ik.imagekit.io/ymkn/elmasria/O%20West.webp",
+  toshiba: "https://ik.imagekit.io/ymkn/elmasria/Toshiba%20Factory.jpg",
+  bvsports: "https://ik.imagekit.io/ymkn/elmasria/Belle%20Vie%20Sports%20Club.jpg",
+  bvstreet: "https://ik.imagekit.io/ymkn/elmasria/Belle%20Vie%20Street%20of%20Dreams.webp"
+};
+
 const translations = {
   ar: {//yassin
+    heroSub: "نورّد ونصنّع جميع أنواع الخرسانة منذ عام 1982.",
+    skip: "تخطي إلى المحتوى",
+    menuL: "القائمة",
+    sv1: "الخرسانة الملونة",
+    sv2: "الخرسانة المسلحة بالألياف",
+    sv3: "الخرسانة الخفيفة",
+    sv4: "الخرسانة النفاذة",
+    sv5: "الخرسانة ذاتية الدمك",
+    sv6: "الخرسانة المطبوعة",
+    fCtaT: "جاهز لبناء مشروعك بقوة؟",
+    fCtaP: "احصل على حلول خرسانية عالية الجودة لمشروعك القادم.",
+    ql: "روابط سريعة",
+    pFeat: "أبرز مشاريعنا",
+    pPart: "مشاريع وشركاء",
+    pList: "قائمة التوريدات",
     home: "الرئيسيه",
     about: "تاريخنا",
     serv: "خدماتنا",
@@ -104,6 +165,21 @@ const translations = {
   },
 
   en: {
+    heroSub: "Supplying and manufacturing every type of concrete since 1982.",
+    skip: "Skip to content",
+    menuL: "Menu",
+    sv1: "Colored concrete",
+    sv2: "Fiber concrete",
+    sv3: "Lightweight concrete",
+    sv4: "Porous concrete",
+    sv5: "Self-compacting concrete",
+    sv6: "Stamped concrete",
+    fCtaT: "Ready to Build Something Strong?",
+    fCtaP: "Get high-quality concrete solutions tailored to your next project.",
+    ql: "Quick Links",
+    pFeat: "Featured projects",
+    pPart: "Projects & partners",
+    pList: "Supply list",
     home: "home",
     about: "about",
     serv: "services",
@@ -166,44 +242,44 @@ const translations = {
     p19:"Procter & Gamble plant",
     p20:"Factory to flee Egypt",
     p21:"Factory Babtain lampposts",
-    p22:"Alfa Ceramica",
-    p23:"Factory Hinkel Adhesfzmsr",
-    p24:"Factory papyrus paper (FINE)",
-    p25:"New Park Manor House School",
-    p26:"Dar Al Fouad Hospital",
-    p27:"Misr University for Science and Technology",
-    p28:"6 October University",
-    p29:"University of Nawal el Dogy",
-    p30:"City of Culture and Science",
-    p31:"Club Bar Mouhandisin 6th of October",
-    p32:"Al-Saraya Real Estate",
-    p33:"Diamond Mall",
-    p34:"City Astarz October",
-    p35:"Factory Flora of Paper Industries",
-    p36:"Complex institutes exclusive",
-    p37:"Mosque of Sheikh Al-Hosiery",
-    p38:"Factory Rasheedy balance,",
-    p39:"Nestle plant",
-    p40:"Factory Dulce",
-    p41:"Factory SEDICO Pharmaceuticals",
-    p42:"Factory Sijmatk Pharmaceuticals",
-    p43:"Factory of the following Egypt Pharmaceuticals",
-    p44:"Factory Alkan Pharma Pharmaceuticals",
-    p45:"The manufacturer of the wisdom of the medicine",
-    p46:"Factory Kounkorit Clothing",
-    p47:"Factory of the World Clothing",
-    p48:"Factory Brands of clothes",
-    p49:"Smart Village Building B4",
-    p50:"The Smart Village Building Documentation of cultural and the mosque",
-    p51:"Royal Hills Villas",
-    p52:"Beverly Hills Villas",
-    p53:"Villas neighborhood alnsaym October 6",
-    p54:"Villas neighborhood Alrihanp October 6",
-    p55:"Villas Jardnia October 6",
-    p56:"Building workshops and stores the eastern area of smoke",
-    p57:"Building Albenzinp eastern area of the smoke",
-    p58:"Factory Rothman eastern area of the smoke",
-    p59:"The manufacturer of the eastern area of Marlboro smoke",
+    p22:"Club Bar Mouhandisin 6th of October",
+    p23:"Al-Saraya Real Estate",
+    p24:"Diamond Mall",
+    p25:"City Astarz October",
+    p26:"Factory Flora of Paper Industries",
+    p27:"Complex institutes exclusive",
+    p28:"Mosque of Sheikh Al-Hosiery",
+    p29:"Factory Rasheedy balance,",
+    p30:"Nestle plant",
+    p31:"Factory Dulce",
+    p32:"Factory SEDICO Pharmaceuticals",
+    p33:"Factory Sijmatk Pharmaceuticals",
+    p34:"Factory of the following Egypt Pharmaceuticals",
+    p35:"Factory Alkan Pharma Pharmaceuticals",
+    p36:"The manufacturer of the wisdom of the medicine",
+    p37:"Factory Kounkorit Clothing",
+    p38:"Factory of the World Clothing",
+    p39:"Factory Brands of clothes",
+    p40:"Smart Village Building B4",
+    p41:"The Smart Village Building Documentation of cultural and the mosque",
+    p42:"Alfa Ceramica",
+    p43:"Factory Hinkel Adhesfzmsr",
+    p44:"Factory papyrus paper (FINE)",
+    p45:"New Park Manor House School",
+    p46:"Dar Al Fouad Hospital",
+    p47:"Misr University for Science and Technology",
+    p48:"6 October University",
+    p49:"University of Nawal el Dogy",
+    p50:"City of Culture and Science",
+    p51:"Beverly Hills Villas",
+    p52:"Villas neighborhood alnsaym October 6",
+    p53:"Villas neighborhood Alrihanp October 6",
+    p54:"Villas Jardnia October 6",
+    p55:"Building workshops and stores the eastern area of smoke",
+    p56:"Building Albenzinp eastern area of the smoke",
+    p57:"Factory Rothman eastern area of the smoke",
+    p58:"The manufacturer of the eastern area of Marlboro smoke",
+    p59:"Royal Hills Villas",
 
 
 
@@ -213,22 +289,80 @@ const translations = {
   }
 };
 function changeLang(lang) {
-
-  document.documentElement.dir =
-    lang === "ar" ? "rtl":"ltr";
-
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll("[data-key]").forEach(el => {
-    const key = el.dataset.key;
-    el.textContent = translations[lang][key];
+  const t = translations[lang];
+  if (!t) return;
+  const d = document, h = d.documentElement;
+  h.lang = lang;
+  h.dir = lang === "ar" ? "rtl" : "ltr";
+  d.querySelectorAll("[data-key]").forEach(el => {
+    const v = t[el.dataset.key];
+    if (v !== undefined && el.textContent !== v) el.textContent = v;
   });
-//yassin
-  localStorage.setItem("language", lang);
+  d.querySelectorAll("[data-alt]").forEach(el => { const v = t[el.dataset.alt]; if (v) el.alt = v; });
+  d.querySelectorAll("[data-aria]").forEach(el => { const v = t[el.dataset.aria]; if (v) el.setAttribute("aria-label", v); });
+  d.querySelectorAll(".lan").forEach(b => {
+    const on = (b.getAttribute("onclick") || "").indexOf("'" + lang + "'") > -1;
+    b.classList.toggle("on", on);
+    b.setAttribute("aria-pressed", on);
+  });
+  try { localStorage.setItem("language", lang); } catch (e) {}
 }
-window.addEventListener("load", () => {
-  const savedLang =
-    localStorage.getItem("language") || "ar";
 
-  changeLang(savedLang);
-});
+function toggleMenu(force) {
+  const n = document.querySelector(".nav-links"), b = document.querySelector(".menu-btn");
+  if (!n) return;
+  const open = typeof force === "boolean" ? force : !n.classList.contains("active");
+  n.classList.toggle("active", open);
+  if (b) b.setAttribute("aria-expanded", open);
+}
+
+(function init() {
+  const d = document, h = d.documentElement;
+  const run = () => {
+    let lang = "ar";
+    try { lang = localStorage.getItem("language") || "ar"; } catch (e) {}
+    changeLang(lang);
+
+    /* images: set from IMG (lazy attributes live in the HTML) */
+    d.querySelectorAll("img[data-img]").forEach(i => {
+      const u = IMG[i.dataset.img];
+      if (!u) { i.classList.add("missing"); return; }
+      i.addEventListener("error", () => i.classList.add("missing"));
+      i.src = u;
+    });
+    if (IMG.logo) h.style.setProperty("--img-logo", 'url("' + IMG.logo + '")');
+    if (IMG.cover) h.style.setProperty("--img-cover", 'url("' + IMG.cover + '")');
+
+    /* menu: close on Escape / outside tap */
+    d.addEventListener("keydown", e => { if (e.key === "Escape") toggleMenu(false); });
+    d.addEventListener("click", e => { if (!e.target.closest(".navbar")) toggleMenu(false); });
+
+    /* loader: hide on load (max 1.2s), skip on later visits in the same session */
+    const L = d.getElementById("loader");
+    if (L) {
+      const hide = () => {
+        if (L.classList.contains("hide")) return;
+        L.classList.add("hide");
+        try { sessionStorage.setItem("seen", "1"); } catch (e) {}
+        setTimeout(() => L.remove(), 700);
+      };
+      if (d.readyState === "complete") hide();
+      else { addEventListener("load", hide); setTimeout(hide, 1200); }
+    }
+
+    /* one IntersectionObserver: reveal sections + run coin only while visible */
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const rv = d.querySelectorAll(".reveal"), coins = d.querySelectorAll(".coin");
+    if (!("IntersectionObserver" in window) || reduce) {
+      rv.forEach(e => e.classList.add("in"));
+    } else {
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      }), { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+      rv.forEach(e => io.observe(e));
+      const co = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("run", e.isIntersecting)));
+      coins.forEach(c => co.observe(c));
+    }
+  };
+  if (d.readyState === "loading") d.addEventListener("DOMContentLoaded", run); else run();
+})();
