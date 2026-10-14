@@ -318,51 +318,176 @@ function toggleMenu(force) {
 
 (function init() {
   const d = document, h = d.documentElement;
+
   const run = () => {
     let lang = "ar";
-    try { lang = localStorage.getItem("language") || "ar"; } catch (e) {}
+    try {
+      lang = localStorage.getItem("language") || "ar";
+    } catch (e) {}
+
     changeLang(lang);
 
-    /* images: set from IMG (lazy attributes live in the HTML) */
+    /* Images */
     d.querySelectorAll("img[data-img]").forEach(i => {
       const u = IMG[i.dataset.img];
-      if (!u) { i.classList.add("missing"); return; }
+
+      if (!u) {
+        i.classList.add("missing");
+        return;
+      }
+
       i.addEventListener("error", () => i.classList.add("missing"));
       i.src = u;
     });
-    if (IMG.logo) h.style.setProperty("--img-logo", 'url("' + IMG.logo + '")');
-    if (IMG.cover) h.style.setProperty("--img-cover", 'url("' + IMG.cover + '")');
 
-    /* menu: close on Escape / outside tap */
-    d.addEventListener("keydown", e => { if (e.key === "Escape") toggleMenu(false); });
-    d.addEventListener("click", e => { if (!e.target.closest(".navbar")) toggleMenu(false); });
-
-    /* loader: hide on load (max 1.2s), skip on later visits in the same session */
-    const L = d.getElementById("loader");
-    if (L) {
-      const hide = () => {
-        if (L.classList.contains("hide")) return;
-        L.classList.add("hide");
-        try { sessionStorage.setItem("seen", "1"); } catch (e) {}
-        setTimeout(() => L.remove(), 700);
-      };
-      if (d.readyState === "complete") hide();
-      else { addEventListener("load", hide); setTimeout(hide, 1200); }
+    if (IMG.logo) {
+      h.style.setProperty("--img-logo", 'url("' + IMG.logo + '")');
     }
 
-    /* one IntersectionObserver: reveal sections + run coin only while visible */
-    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const rv = d.querySelectorAll(".reveal"), coins = d.querySelectorAll(".coin");
+    if (IMG.cover) {
+      h.style.setProperty("--img-cover", 'url("' + IMG.cover + '")');
+    }
+
+    /* Menu */
+    d.addEventListener("keydown", e => {
+      if (e.key === "Escape") toggleMenu(false);
+    });
+
+    d.addEventListener("click", e => {
+      if (!e.target.closest(".navbar")) toggleMenu(false);
+    });
+
+    /* Loader: show only once per browsing session */
+    const L = d.getElementById("loader");
+
+    if (L) {
+      let seen = false;
+
+      try {
+        seen = sessionStorage.getItem("seen") === "1";
+      } catch (e) {}
+
+      if (seen) {
+        L.remove();
+      } else {
+        try {
+          sessionStorage.setItem("seen", "1");
+        } catch (e) {}
+
+        const hide = () => {
+          if (!L.isConnected || L.classList.contains("hide")) return;
+
+          L.classList.add("hide");
+
+          setTimeout(() => L.remove(), 700);
+        };
+
+        // Keep the loader visible for 2 seconds
+        setTimeout(hide, 3000);
+      }
+    }
+
+    /* Reveal sections + animate coins only while visible */
+    const reduce = matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    const rv = d.querySelectorAll(".reveal");
+    const coins = d.querySelectorAll(".coin");
+
     if (!("IntersectionObserver" in window) || reduce) {
       rv.forEach(e => e.classList.add("in"));
     } else {
-      const io = new IntersectionObserver(es => es.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-      }), { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+      const io = new IntersectionObserver(es => {
+        es.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        });
+      }, {
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.08
+      });
+
       rv.forEach(e => io.observe(e));
-      const co = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("run", e.isIntersecting)));
+
+      const co = new IntersectionObserver(es => {
+        es.forEach(e => {
+          e.target.classList.toggle("run", e.isIntersecting);
+        });
+      });
+
       coins.forEach(c => co.observe(c));
     }
   };
-  if (d.readyState === "loading") d.addEventListener("DOMContentLoaded", run); else run();
+
+  if (d.readyState === "loading") {
+    d.addEventListener("DOMContentLoaded", run);
+  } else {
+    run();
+  }
+})();
+
+
+(() => {
+  const header = document.querySelector("header");
+  if (!header) return;
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  const threshold = 8;
+
+  function updateNavbar() {
+    const currentY = window.scrollY;
+    const difference = currentY - lastScrollY;
+
+    if (currentY <= 100) {
+      header.classList.remove("nav-hidden");
+    } else if (Math.abs(difference) >= threshold) {
+      if (difference > 0) {
+        header.classList.add("nav-hidden");
+      } else {
+        header.classList.remove("nav-hidden");
+      }
+
+      lastScrollY = currentY;
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(updateNavbar);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+})();
+
+/* ---------- Safe internal-page prefetch: on intent (hover/touch/focus) + idle nav links; skipped on Save-Data / slow networks ---------- */
+(() => {
+  const c = navigator.connection;
+  if (c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || ""))) return;
+  const done = new Set([location.pathname]);
+  const prefetch = a => {
+    if (!a || a.origin !== location.origin || !/\.html$|\/$/.test(a.pathname)) return;
+    if (a.target === "_blank" || a.hasAttribute("download")) return;
+    const key = a.pathname;
+    if (done.has(key)) return;
+    done.add(key);
+    const l = document.createElement("link");
+    l.rel = "prefetch"; l.href = a.pathname; l.as = "document";
+    document.head.appendChild(l);
+  };
+  const intent = e => { const a = e.target.closest && e.target.closest("a[href]"); if (a) prefetch(a); };
+  document.addEventListener("pointerover", e => { if (e.pointerType === "mouse") intent(e); }, { passive: true });
+  document.addEventListener("touchstart", intent, { passive: true });
+  document.addEventListener("focusin", intent);
+  const idle = window.requestIdleCallback || (f => setTimeout(f, 1500));
+  addEventListener("load", () => idle(() => document.querySelectorAll(".nav-links a[href]").forEach(prefetch)));
 })();
